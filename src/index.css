@@ -1,16 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-
     
 * {
   scroll-behavior: smooth;
   overscroll-behavior-y: none; 
 }
-
-
 
 #navbar li {
     padding-left: 0.75rem;
@@ -18,6 +13,29 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
+
+
+.animation {
+  animation: fade 2 8s ease-in forwards
+}
+
+.animationEnd {
+  animation: fadeIn 4s ease-in;
+}
+
+@keyframes fade {
+
+  from, to { opacity: 0%; }
+  50% { opacity: 100%;}  
+}
+
+
+@keyframes fadeIn {
+
+  from { opacity: 0%; }
+  to { opacity: 100%;}  
+}
+
 
 @layer base {
     h1 {

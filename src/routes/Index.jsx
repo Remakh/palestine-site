@@ -1,29 +1,42 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { s1, s2, s3 } from '../assets'
+import { s1, s2, s3, arrow } from '../assets'
 import Hero from '../components/Hero'
 import Subhero from '../components/Subhero'
 
 
 const Index = () => {
-  const [display, setDisplay] = useState(0)
+  const [display, setDisplay] = useState("-translate-x-[0vw]")
   const imcount = 3*100
   const handleClickRight = () => {
-    setDisplay(Math.min(display + 100, (imcount-1 * 100)))
+    if (display === "-translate-x-[0vw]") {
+      setDisplay("-translate-x-[100vw]")
+    }  else {
+      setDisplay("-translate-x-[200vw]")
+    }
   }
+
   const handleClickLeft = () => {
-    setDisplay(Math.max((display - 100), 0))
+    if (display === "-translate-x-[200vw]") {
+      setDisplay("-translate-x-[100vw]")
+    }  else {
+      setDisplay("-translate-x-[0vw]")
+    }
   }
   const images = [s1, s2]
   return (
     <div className='w-[100vw] '>
-      <div className={`flex w-[${imcount*100}vw]`}>
+      <div className={`flex w-[${imcount*100}vw] relative`}>
         <Hero position={display}/>
         {images.map((image) => (
-          <img src={image} className={`min-w-[100vw] max-h-[600px] object-cover -translate-x-[${display}vw] transition-all ease-out duration-1000  }  `}/>
-        ) )}
-        <button onClick={handleClickRight} className='absolute text-2xl top-1/2 right-0 mr-10 w-10 h-10 -translate-1/2 -translate-y-1/2 bg-black text-white px-4 py-2 rounded-full'>{'→'}</button>
-        <button onClick={handleClickLeft} className='absolute text-2xl top-1/2 left-0 ml-10 w-10 h-10 -translate-1/2 -translate-y-1/2 bg-black text-white px-4 py-2 rounded-full'>{'←'}</button>
+          <img src={image} className={`min-w-[100vw] max-h-[600px] object-cover ${display} transition-all ease-out duration-1000  }  `}/>
+        ))}
+        
+        <button onClick={handleClickRight} className = 'opacity-30 hover:opacity-100 absolute text-title font-serif top-1/2 right-0 mr-10 -translate-1/2 -translate-y-1/2 bg-slate-500 text-black px-4 py-2 rounded-full'>{'>'}</button>
+        <button onClick={handleClickLeft} className = 'opacity-30 hover:opacity-100 absolute text-title font-serif top-1/2 left-0 ml-10 -translate-1/2 -translate-y-1/2 bg-slate-500 text-black px-4 py-2 rounded-full'>{'<'}</button>
+        {/* {images.map(() => (
+          <div className={`rounded-full h-10 w-10 bg-red-900 absolute `}> </div>
+        ))} */}
       </div>
       <Subhero />
     </div>
