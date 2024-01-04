@@ -25,7 +25,7 @@ const Index = () => {
   }
   const images = [s1, s2]
   return (
-    <div className='w-[100vw] '>
+    <div className='w-[100vw] overflow-hidden '>
       <div className={`flex w-[${imcount*100}vw] relative`}>
         <Hero position={display}/>
         {images.map((image) => (
