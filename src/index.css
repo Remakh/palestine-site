@@ -16,11 +16,11 @@
 
 
 .animation {
-  animation: fade 2 8s ease-in forwards
+  animation: fade 2 4s ease-in forwards
 }
 
 .animationEnd {
-  animation: fadeIn 4s ease-in;
+  animation: fadeIn 2s ease-in;
 }
 
 @keyframes fade {
