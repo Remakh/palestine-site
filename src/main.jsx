@@ -6,6 +6,7 @@ import About from './routes/About'
 import Index from './routes/Index'
 import Events from './routes/Events.jsx'
 import { createBrowserRouter, RouterProvider, useRouteError  } from 'react-router-dom'
+import Learn from './routes/Learn.jsx'
 
 const Err = () => {
   const error = useRouteError()
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: '/Events',
         element: <Events />
+      },
+      {
+        path: '/Learn',
+        element: <Learn />
       }
     ]
   }

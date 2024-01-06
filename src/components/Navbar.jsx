@@ -22,7 +22,7 @@ const Navbar = () => {
               <NavLink
                 to='/About'
                 className={( {isActive, isPending} ) => (
-                  isActive ? "bg-blue-500 rounded" 
+                  isActive ? "bg-green-500 rounded" 
                   : ""
                   )}>
               <Link to='/About'>
@@ -32,7 +32,7 @@ const Navbar = () => {
               <NavLink
                 to='/Events'
                 className={( {isActive, isPending} ) => (
-                  isActive ? "bg-blue-500 rounded" 
+                  isActive ? "bg-green-500 rounded" 
                   : ""
                   )}>
               <Link to='/Events'>
@@ -42,7 +42,7 @@ const Navbar = () => {
               <NavLink
                 to='/Learn'
                 className={( {isActive, isPending} ) => (
-                  isActive ? "bg-blue-500 rounded" 
+                  isActive ? "bg-green-500 rounded" 
                   : ""
                   )}>
               <Link to='/Learn'>
