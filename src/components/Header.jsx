@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from './navbar'
-import { logo, logo2 } from '../assets'
+import Navbar from './Navbar'
+
 
 const Header = () => {
   return (
