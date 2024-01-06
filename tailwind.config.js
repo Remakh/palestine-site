@@ -9,7 +9,8 @@ export default {
         'title': '7rem'
       },
       colors: {
-        'cream' : '#FFFDD0'
+        'cream' : '#FFFDD0',
+        'gold' : '#FFD700'
       }
     },
   

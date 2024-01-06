@@ -3,7 +3,7 @@ import { instagram, spotify } from '../assets'
 
 const Footer = () => {
   return (
-    <div className=' bg-cream flex justify-center items-center w-full relative bottom-0'>
+    <div className=' bg-cream flex justify-center items-center w-full relative mb-0 bottom-0'>
     <ul className='flex flex-row fixedSpaces'>
          <li>
          <a href='https://www.instagram.com/manchesterfop/' target='_blank'>

@@ -15,7 +15,7 @@ const Hero = ( { position } ) => {
     <div className='w-full flex-grow-1 min-w-[100%] '>
       <div className={`flex  min-h-[600px] bg-cream relative align-middle ${position} transition-transform duration-1000 ease-out text-center border-b border-gray-100 shadow-lg` }>
         <div className=' m-auto relative'>          
-          <h1 className={`${cls} font-semibold font-Open-sans text-title h-min text-red-500 title-font whitespace-nowrap `} onAnimationIteration={() => setText(text2)}  onAnimationEnd={() => { setCls('animationEnd'); setText(text3)}}> {text}</h1>
+          <h1 className={`${cls} font-semibold font-Open-sans text-title h-min text-gold title-font whitespace-nowrap `} onAnimationIteration={() => setText(text2)}  onAnimationEnd={() => { setCls('animationEnd'); setText(text3)}}> {text}</h1>
         </div>
       </div>
     </div>

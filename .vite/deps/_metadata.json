@@ -1,0 +1,40 @@
+{
+  "hash": "eacbdc4b",
+  "configHash": "d1b2a7d9",
+  "lockfileHash": "daacaae1",
+  "browserHash": "f5ad6146",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "0c55e998",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "89ff95f7",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "9d5809cc",
+      "needsInterop": false
+    },
+    "react-calendar": {
+      "src": "../../node_modules/react-calendar/dist/esm/index.js",
+      "file": "react-calendar.js",
+      "fileHash": "fca933c9",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-UWZXFKA6": {
+      "file": "chunk-UWZXFKA6.js"
+    },
+    "chunk-UPDK7Z2H": {
+      "file": "chunk-UPDK7Z2H.js"
+    }
+  }
+}
