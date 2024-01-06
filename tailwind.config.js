@@ -7,6 +7,9 @@ export default {
     extend: {
       fontSize : {
         'title': '7rem'
+      },
+      colors: {
+        'cream' : '#FFFDD0'
       }
     },
   

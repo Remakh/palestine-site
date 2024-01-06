@@ -32,11 +32,11 @@ const Index = () => {
           <img src={image} className={`min-w-[100vw] max-h-[600px] object-cover ${display} transition-all ease-out duration-1000  }  `}/>
         ))}
         
-        <button onClick={handleClickRight} className = 'opacity-30 hover:opacity-100 absolute text-title font-serif top-1/2 right-0 mr-10 -translate-1/2 -translate-y-1/2 bg-slate-500 text-black px-4 py-2 rounded-full'>{'>'}</button>
-        <button onClick={handleClickLeft} className = 'opacity-30 hover:opacity-100 absolute text-title font-serif top-1/2 left-0 ml-10 -translate-1/2 -translate-y-1/2 bg-slate-500 text-black px-4 py-2 rounded-full'>{'<'}</button>
-        {/* {images.map(() => (
-          <div className={`rounded-full h-10 w-10 bg-red-900 absolute `}> </div>
-        ))} */}
+        <button onClick={handleClickRight} className = 'opacity-30 hover:opacity-70 absolute text-3xl font-serif top-1/2 right-0 mr-10 -translate-1/2 -translate-y-1/2 bg-black text-white px-4 py-2 rounded-full'>{'⮞'}</button>
+        <button onClick={handleClickLeft} className = 'opacity-30 hover:opacity-70 absolute text-3xl font-serif top-1/2 left-0 ml-10 -translate-1/2 -translate-y-1/2 bg-black text-white px-4 py-2 rounded-full'>{'⮜'}</button>
+        {images.map((_, index) => (
+          <div className={`rounded-full h-10 w-10 bg-red-900 translate-y-${index*100}`}> </div>
+        ))}
       </div>
       <Subhero />
     </div>

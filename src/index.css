@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Damion&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-    
+
 * {
   scroll-behavior: smooth;
   overscroll-behavior-y: none; 
@@ -14,6 +15,13 @@
     padding-bottom: 0.5rem;
 }
 
+.background {
+  background: rgb(255, 253, 208);
+}
+
+.title-font {
+  font-family: 'Damion', cursive;
+}
 
 .animation {
   animation: fade 2 4s ease-in forwards

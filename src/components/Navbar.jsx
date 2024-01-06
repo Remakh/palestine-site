@@ -12,7 +12,7 @@ const Navbar = () => {
               <NavLink
                 to='/'
                 className={( {isActive, isPending} ) => (
-                  isActive ? "bg-blue-500 rounded" 
+                  isActive ? "bg-green-500 rounded" 
                   : ""
                   )}>
               <Link to='/'>

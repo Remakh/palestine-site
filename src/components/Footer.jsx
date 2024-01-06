@@ -3,7 +3,7 @@ import { logo2 } from '../assets'
 
 const Footer = () => {
   return (
-    <div className=' bg-white flex items-center w-full'>
+    <div className=' bg-cream flex items-center w-full'>
       <img src={logo2} className='h-[50px]' />
     </div>
   )
