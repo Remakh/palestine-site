@@ -1,7 +1,7 @@
 import React from 'react'
 import { logo2 } from '../assets'
 import events from '../event'
-import EventBox from './eventBox'
+import EventBox from './EventBox'
 
 const Subhero = () => {
   return (
