@@ -5,8 +5,8 @@ import EventBox from './EventBox'
 
 const Subhero = () => {
   return (
-    <div className='text-center bg-red-100 p-4'>
-      <h1 className='text-black font-normal text-font font-Open-sans pt-10'>Upcoming Events</h1>
+    <div className='text-center bg-green-800 p-4'>
+      <h1 className='text-white font-normal text-font font-Open-sans pt-10'>Upcoming Events</h1>
         <div className='mt-10'>
                 <ul className="flex flex-row justify-items-center justify-center space-x-28 pb-28">    
 

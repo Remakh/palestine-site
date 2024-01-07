@@ -9,6 +9,11 @@
   overscroll-behavior-y: none; 
 }
 
+:root {
+  height: 100vh;
+}
+
+
 #navbar li {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
@@ -33,7 +38,18 @@
 }
 
 .animationEnd {
-  animation: fadeIn 2s ease-in;
+  animation: fadeIn 4s ease-in forwards;
+
+}
+
+
+@keyframes underlineIn {
+  
+  from { 
+          transform: scale(0)
+        }
+  to {transform: scale(1)}
+  
 }
 
 @keyframes fade {

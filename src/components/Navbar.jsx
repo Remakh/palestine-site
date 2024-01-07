@@ -1,18 +1,21 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom'
-import { logo2 } from '../assets'
+import { FOPLogo } from '../assets'
 const Navbar = () => {
+
+  const buttons = 'bg-white rounded text-black'
+
   return (
-    <div className='w-10/12 mx-auto sticky top-0'>
+    <div className='w-10/12 mx-auto sticky top-0 flex text-white justify-between'>
+      <Link to='/'>
+        <img src={FOPLogo} className=' w-[100px] my-auto p-3 rounded-full' />
+      </Link>
       <nav className='flex justify-between sticky top-0'>
-          <div className='w-20 h-20 flex my-2'>
-                <img src={logo2} className='rounded-full h-[75px] w-[75px] my-auto' />
-            </div>
             <ul id='navbar' className='flex flex-row space-x-5 font-poppins my-auto'>
               <NavLink
                 to='/'
                 className={( {isActive, isPending} ) => (
-                  isActive ? "bg-green-500 rounded" 
+                  isActive ? buttons 
                   : ""
                   )}>
               <Link to='/'>
@@ -22,7 +25,7 @@ const Navbar = () => {
               <NavLink
                 to='/About'
                 className={( {isActive, isPending} ) => (
-                  isActive ? "bg-green-500 rounded" 
+                  isActive ? buttons 
                   : ""
                   )}>
               <Link to='/About'>
@@ -32,7 +35,7 @@ const Navbar = () => {
               <NavLink
                 to='/Events'
                 className={( {isActive, isPending} ) => (
-                  isActive ? "bg-green-500 rounded" 
+                  isActive ?buttons
                   : ""
                   )}>
               <Link to='/Events'>
@@ -42,7 +45,7 @@ const Navbar = () => {
               <NavLink
                 to='/Learn'
                 className={( {isActive, isPending} ) => (
-                  isActive ? "bg-green-500 rounded" 
+                  isActive ? buttons
                   : ""
                   )}>
               <Link to='/Learn'>
@@ -50,10 +53,10 @@ const Navbar = () => {
               </Link>
               </NavLink>
             </ul>
+        </nav>
             <div>
 
             </div>
-        </nav>
     </div>
   );
 };

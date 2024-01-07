@@ -3,7 +3,7 @@ import { logo2, s2 } from '../assets'
 
 const Home = () => {
   return (
-    <div className='flex justify-center h-[100%]'>
+    <div className='flex justify-center h-[100%] bg-red-100 border-b shadow-lg '>
       <div className=' flex-grow-1 flex flex-col align-top w-8/12 h-full bg-red-100 p-10'>
         <h1 className=''>Who are we?</h1>
         <div className='flex'>

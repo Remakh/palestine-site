@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Learn = () => {
+const Committee = () => {
   return (
     <div>
-    
+      
     </div>
   )
 }
 
-export default Learn
+export default Committee
