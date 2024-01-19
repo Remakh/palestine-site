@@ -8,6 +8,9 @@ export default {
       fontSize : {
         'title': '7rem'
       },
+      innerShadow: {
+        'button': '10px 10px 5px lightblue inset',
+      },
       colors: {
         "cream" : '#FFFDD0',
         "gold" : '#FFD700', 

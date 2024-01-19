@@ -8,9 +8,11 @@ import Footer from './components/Footer'
 function App() {
 
   return (
-      <div> 
+      <div className='flex-col flex'> 
         <Header />
+        <div className='content'>
         <Outlet />
+        </div>
         <Footer />
       </div>
   )

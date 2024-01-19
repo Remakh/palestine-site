@@ -10,9 +10,13 @@
 }
 
 :root {
-  height: 100vh;
+  min-height: calc(100vh - 150px);
 }
 
+#container {
+  min-height: calc(100vh - 150px);
+
+}
 
 #navbar li {
     padding-left: 0.75rem;
@@ -39,8 +43,16 @@
 
 .animationEnd {
   animation: fadeIn 4s ease-in forwards;
-
 }
+
+.eventText {
+  font-size: small;
+}
+
+.idk {
+  box-shadow: 10px 10px 5px lightblue inset;
+}
+
 
 
 @keyframes underlineIn {
