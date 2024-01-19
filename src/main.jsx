@@ -7,6 +7,7 @@ import Index from './routes/Index'
 import Events from './routes/Events.jsx'
 import { createBrowserRouter, RouterProvider, useRouteError  } from 'react-router-dom'
 import Learn from './routes/Learn.jsx'
+import Committee from './routes/Committee.jsx'
 
 const Err = () => {
   const error = useRouteError()
@@ -27,10 +28,15 @@ const router = createBrowserRouter([
         index: true,
         element: <Index /> 
       },
-
       {
         path: '/About',
-        element: <About />
+        element: <About />,
+        children: [
+            {
+              path: 'Committee',
+              element: <Committee />
+            }
+          ]
       },
       {
         path: '/Events',

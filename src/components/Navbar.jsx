@@ -6,12 +6,12 @@ const Navbar = () => {
   const buttons = 'bg-white rounded text-black'
 
   return (
-    <div className='w-10/12 mx-auto sticky top-0 flex text-white justify-between'>
+    <div className='w-10/12 mx-auto sticky top-0 flex text-white justify-between overflow-visible'>
       <Link to='/'>
         <img src={FOPLogo} className=' w-[100px] my-auto p-3 rounded-full' />
       </Link>
-      <nav className='flex justify-between sticky top-0'>
-            <ul id='navbar' className='flex flex-row space-x-5 font-poppins my-auto'>
+      <nav className='flex justify-between '>
+            <ul id='navbar' className='flex space-x-5 my-auto '>
               <NavLink
                 to='/'
                 className={( {isActive, isPending} ) => (
@@ -25,12 +25,15 @@ const Navbar = () => {
               <NavLink
                 to='/About'
                 className={( {isActive, isPending} ) => (
-                  isActive ? buttons 
-                  : ""
-                  )}>
-              <Link to='/About'>
+                  isPending ? 'hoover:bg-white hoover:text-black' : 
+                  isActive ? 'bg-white rounded text-black group' 
+                  : "hoover:bg-white hoover:text-black group"
+                  ) }>
+              <Link to='/About' className=''>
                 <li>About </li>
-                <li></li>
+              </Link>
+              <Link to='/About/Committee' className='hidden hover:bg-red-400 group-hover:block absolute bg-green-500 text-white rounded -translate-x-4'>
+                <li>Committee</li>
               </Link>
               </NavLink>
               <NavLink
