@@ -3,7 +3,7 @@ import { instagram, spotify } from '../assets'
 
 const Footer = () => {
   return (
-    <div className='bg-gold flex justify-center bottom-0 w-full h-[170px]' id='footer'>
+    <div className=' bg-beige flex justify-center bottom-0 w-full h-[170px]' id='footer'>
       <div className='w-8/12 flex flex-col'>
       <div className='flex justify-center w-full relative mb-0 bottom-0 mx-auto border-b border-black'>
       <ul className='flex flex-row fixedSpaces'>

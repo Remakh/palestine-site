@@ -10,8 +10,8 @@ const Subhero = () => {
         <div className='mt-10'>
                 <ul className="flex flex-row justify-items-center justify-center space-x-28 pb-28">    
                   {events.slice(0, 2).map((e) => (
-                      <li className="">
-                        <EventBox title={e.title} description={e.description} image={e.image} location={e.location} date={e.date} time={e.time} />
+                      <li className="" key={e.id}>
+                        <EventBox id={e.id} title={e.title} description={e.description} image={e.image} location={e.location} date={e.date} time={e.time} />
                   </li>
                 ))}        
             </ul>

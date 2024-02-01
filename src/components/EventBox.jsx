@@ -2,9 +2,10 @@ import React from 'react'
 import { VscCalendar } from "react-icons/vsc";
 import { FaClock } from "react-icons/fa";
 import { FaSearchLocation } from "react-icons/fa";
+import { Link } from 'react-router-dom'
 
-const EventBox = ( {title, image, date, time, location, description} ) => {
 
+const EventBox = ( {id, title, image, date, time, location, description} ) => {
   return (
       <div className='bg-slate-50 rounded-xl w-80 flex flex-col border-slate-50 shadow-lg'>
         <img src={image} className=' mb-2 h-32 object-cover w-full min-w-[100%] rounded-t-xl' /> 
@@ -26,7 +27,7 @@ const EventBox = ( {title, image, date, time, location, description} ) => {
           </li>
         </ul>
         <div className=' px-4 justify-center flex'>
-            <button className='text-font m-5 p-2 w-full font-semi-bold text-center bg-gold rounded-xl hover:opacity-60  transition-all '>More Info</button> 
+            <Link to={`/Events/${id}`} className='text-font m-5 p-2 w-full font-semi-bold text-center bg-gold rounded-xl hover:opacity-60  transition-all '>More Info</Link> 
         </div>
       </div>
   )

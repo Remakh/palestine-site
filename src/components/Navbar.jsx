@@ -10,8 +10,8 @@ const Navbar = () => {
       <Link to='/'>
         <img src={FOPLogo} className=' w-[100px] my-auto p-3 rounded-full' />
       </Link>
-      <nav className='flex justify-between '>
-            <ul id='navbar' className='flex space-x-5 my-auto '>
+      <nav className='flex justify-between  text-lg'>
+            <ul id='navbar' className='flex space-x-10 my-auto '>
               <NavLink
                 to='/'
                 className={( {isActive, isPending} ) => (
@@ -32,8 +32,16 @@ const Navbar = () => {
               <Link to='/About' className=''>
                 <li>About </li>
               </Link>
-              <Link to='/About/Committee' className='hidden hover:bg-red-400 group-hover:block absolute bg-green-500 text-white rounded -translate-x-4'>
-                <li>Committee</li>
+              </NavLink>
+              <NavLink
+                to='/Committee'
+                className={( {isActive, isPending} ) => (
+                  isPending ? 'hoover:bg-white hoover:text-black' : 
+                  isActive ? 'bg-white rounded text-black group' 
+                  : "hoover:bg-white hoover:text-black group"
+                  ) }>
+              <Link to='/Committee' className=''>
+                <li>Committee </li>
               </Link>
               </NavLink>
               <NavLink
@@ -47,19 +55,21 @@ const Navbar = () => {
               </Link>
               </NavLink>
               <NavLink
-                to='/Learn'
+                to='/Statements'
                 className={( {isActive, isPending} ) => (
                   isActive ? buttons
                   : ""
                   )}>
-              <Link to='/Learn'>
-                <li>Learn </li>
+              <Link to='/Statements'>
+                <li>Statements</li>
               </Link>
               </NavLink>
             </ul>
         </nav>
             <div>
-
+            <Link to='/'>
+                <p>Join Us!</p>
+              </Link>
             </div>
     </div>
   );

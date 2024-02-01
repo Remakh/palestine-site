@@ -19,7 +19,7 @@ const Events = () => {
         <div className='flex justify-center'>
           <ul className='flex mt-24 sm:flex-col md:flex-row space-x-10'>
             {events.map((e, index) => {
-              return <li><EventBox title={e.title} image={e.image} date={e.date} description={e.description} location={e.location} time={e.time} /></li>
+              return <li key={e.id}><EventBox id={e.id} title={e.title} image={e.image} date={e.date} description={e.description} location={e.location} time={e.time} /></li>
             })}
           </ul>
         </div>

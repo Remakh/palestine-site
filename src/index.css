@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Damion&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -30,8 +31,9 @@
 }
 
 .title-font {
-  font-family: 'Damion', cursive;
+  font-family: 'Lato', sans-serif;
 }
+
 
 .text-font {
   font-family: 'Nunito', sans-serif;

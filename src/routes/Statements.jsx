@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Learn = () => {
+const Statements = () => {
   return (
     <div className=' bg-cream'>
     <div className='items-center align-middle flex justify-center'>
@@ -18,4 +18,4 @@ const Learn = () => {
   )
 }
 
-export default Learn
+export default Statements

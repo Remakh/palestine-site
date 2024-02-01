@@ -14,7 +14,8 @@ export default {
       colors: {
         "cream" : '#FFFDD0',
         "gold" : '#FFD700', 
-        "forest-green": '#2D511C'
+        "forest-green": '#2D511C',
+        "beige" : "#F5F5DC"
       }
     },
   

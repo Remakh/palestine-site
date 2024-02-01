@@ -6,8 +6,10 @@ import About from './routes/About'
 import Index from './routes/Index'
 import Events from './routes/Events.jsx'
 import { createBrowserRouter, RouterProvider, useRouteError  } from 'react-router-dom'
-import Learn from './routes/Learn.jsx'
+import Statements from './routes/Statements.jsx'
 import Committee from './routes/Committee.jsx'
+import EventPage from './routes/EventPage.jsx'
+import { loader as EventLoader } from './components/EventHeader.jsx'
 
 const Err = () => {
   const error = useRouteError()
@@ -31,20 +33,23 @@ const router = createBrowserRouter([
       {
         path: '/About',
         element: <About />,
-        children: [
-            {
-              path: 'Committee',
-              element: <Committee />
-            }
-          ]
+      },
+      {
+        path: 'Committee',
+        element: <Committee />
       },
       {
         path: '/Events',
         element: <Events />
       },
       {
-        path: '/Learn',
-        element: <Learn />
+        path: '/Events/:id',
+        element: <EventPage />,
+        loader: EventLoader
+        },
+      {
+        path: '/Statements',
+        element: <Statements />
       }
     ]
   }
