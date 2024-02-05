@@ -7,5 +7,7 @@ import arrow from './arrow.png'
 import instagram from './instagram.svg'
 import spotify from './spotify.svg'
 import FOPLogo from './McrFOP-Logo.png'
+import catf from './catf.webp'
+import catm from './catm.jpg'
 
-export { logo, logo2, s1, s2, s3, arrow, instagram, spotify, FOPLogo}
+export { logo, logo2, s1, s2, s3, arrow, instagram, spotify, FOPLogo, catf, catm}

@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: 'Committee',
+        path: '/Committee',
         element: <Committee />
       },
       {
