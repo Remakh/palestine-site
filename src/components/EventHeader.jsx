@@ -7,6 +7,7 @@ import { s1 } from '../assets'
 import { VscCalendar } from "react-icons/vsc";
 import { FaClock } from "react-icons/fa";
 import { FaSearchLocation } from "react-icons/fa";
+import key from "../key"
 
 
 export async function loader( {params} ) {
@@ -40,7 +41,7 @@ const EventHeader = () => {
                         loading="lazy"
                         allowfullscreen
                         referrerpolicy="no-referrer-when-downgrade"
-                        src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAfTwFXl4Enx-FGFM-ZJU0YMRx5OVfZLiM
+                        src={`https://www.google.com/maps/embed/v1/place?key=${key}
                             &q=${event.location}`}>
                     </iframe>
                 </div>

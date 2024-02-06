@@ -14,9 +14,7 @@ const Home = () => {
           <img src={logo2} className='rounded-full h-[300px] w-[300px]' />
           </div>
           <div>
-          </div>
-          <h1 className='text-gold'>Committee</h1>
-            
+          </div>            
         </div>
       </div>
     </div>

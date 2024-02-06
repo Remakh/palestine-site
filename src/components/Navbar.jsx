@@ -1,16 +1,21 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom'
-import { FOPLogo } from '../assets'
+import { FOPLogo, title } from '../assets'
 const Navbar = () => {
 
   const buttons = 'bg-white rounded text-black'
 
   return (
-    <div className='w-10/12 mx-auto sticky top-0 flex text-white justify-between overflow-visible'>
-      <Link to='/'>
-        <img src={FOPLogo} className=' w-[100px] my-auto p-3 rounded-full' />
-      </Link>
-      <nav className='flex justify-between  text-lg'>
+    <div className='w-11/12 mx-auto sticky top-0 flex text-white overflow-visible justify-between'>
+      <div className='flex'>
+        <Link to='/'>
+          <img src={FOPLogo} className=' w-[100px] my-auto p-3 rounded-full'/>
+        </Link>
+        <Link to='/' className='my-auto'>
+          <img src={title} className=' w-[300px] my-auto p-3 rounded-full'/>    
+          </Link>    
+      </div>
+      <nav className='flex flex-grow-1 text-lg align-middle -translate-x-28'>
             <ul id='navbar' className='flex space-x-10 my-auto '>
               <NavLink
                 to='/'
@@ -66,12 +71,10 @@ const Navbar = () => {
               </NavLink>
             </ul>
         </nav>
-            <div>
-            <Link to='/'>
-                <p>Join Us!</p>
-              </Link>
-            </div>
-    </div>
+            <Link to='/' className='my-auto px-5 py-2 bg-gold text-black rounded-lg text-nowrap '>
+                <p>Become a Member</p>
+            </Link>
+      </div>
   );
 };
 

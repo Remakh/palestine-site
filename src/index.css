@@ -79,6 +79,11 @@
   to { opacity: 100%;}  
 }
 
+@layer components {
+  .committee-group {
+    @apply flex justify-center space-x-4 py-5 max-w-[800px] flex-wrap-reverse ;
+  }
+}
 
 @layer base {
     h1 {
