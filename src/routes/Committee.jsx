@@ -1,6 +1,6 @@
 import React from 'react'
 import { s2, catf, catm } from '../assets'
-import CommitteeBox from '../components/committeeBox'
+import CommitteeBox from '../components/CommitteeBox'
 
 const Committee = () => {
   return (
