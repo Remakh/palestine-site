@@ -7,7 +7,6 @@ import events from '../event';
 
 
 const Events = () => {
-  const [value, onChange] = useState(new Date());
   return (
     <div className='justify-center flex bg-cream pb-52'>
       <div className='w-8/12 '>

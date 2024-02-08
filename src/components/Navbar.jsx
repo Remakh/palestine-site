@@ -71,9 +71,9 @@ const Navbar = () => {
               </NavLink>
             </ul>
         </nav>
-            <Link to='/' className='my-auto px-5 py-2 bg-gold text-black rounded-lg text-nowrap '>
-                <p>Become a Member</p>
-            </Link>
+            <a href='https://manchesterstudentsunion.com/shop/product/7425-' target='_blank' className='my-auto px-5 py-2 bg-gold text-black rounded-lg text-nowrap '>
+                <p className=' text-lg'>Join the Society ☺</p>
+            </a>
       </div>
   );
 };

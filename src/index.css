@@ -83,7 +83,17 @@
   .committee-group {
     @apply flex justify-center space-x-4 py-5 max-w-[800px] flex-wrap-reverse ;
   }
+  .socials {
+      @apply border-x-2 py-5 px-12 hover:opacity-100 opacity-50
+    }
+
+  /* .socials-icon {
+      @apply 
+    } */
+
 }
+
+
 
 @layer base {
     h1 {
@@ -98,7 +108,7 @@
     h4 {
       @apply text-xl ;
     }
-    h4 {
+    h5 {
       @apply text-lg ;
     }
   }

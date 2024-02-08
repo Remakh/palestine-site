@@ -8,6 +8,7 @@ import Subhero from '../components/Subhero'
 const Index = () => {
   const [display, setDisplay] = useState("-translate-x-[0%]")
   const imcount = 3*100
+  
   const handleClickRight = () => {
     if (display === "-translate-x-[0%]") {
       setDisplay("-translate-x-[100%]")
