@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { s1, s2, s3, arrow } from '../assets'
 import Hero from '../components/Hero'
 import Subhero from '../components/Subhero'
+import API_test from '../components/API_test'
 
 
 const Index = () => {
@@ -18,7 +19,7 @@ const Index = () => {
   }
 
   const handleClickLeft = () => {
-    if (display === "-translate-x-[200%]") {
+  if (display === "-translate-x-[200%]") {
       setDisplay("-translate-x-[100%]")
     }  else {
       setDisplay("-translate-x-[0%]")
@@ -30,7 +31,7 @@ const Index = () => {
       <div className={`flex w-[${imcount*100}%] relative`}>
         <Hero position={display}/>
         {images.map((image) => (
-          <img src={image} className={`min-w-[100%] max-h-[600px] object-cover ${display} transition-all ease-out duration-1000  }  `}/>
+          <img src={image} className={`min-w-[100%] max-h-[1000px] object-cover ${display} transition-all ease-out duration-1000  }  `}/>
         ))}
         <button onClick={handleClickRight} className = 'opacity-30 hover:opacity-70 text-3xl absolute font-serif right-0 top-1/2 mr-10 -translate-y-1/2 bg-black text-white px-4 py-2 rounded-full'>{'⮞'}</button>
         <button onClick={handleClickLeft} className = 'opacity-30 hover:opacity-70 absolute text-3xl font-serif top-1/2 left-0 ml-10 -translate-y-1/2 bg-black text-white px-4 py-2 rounded-full'>{'⮜'}</button>
@@ -38,6 +39,7 @@ const Index = () => {
           <div className={`rounded-full h-10 w-10 bg-red-900 translate-y-${index*100}`}> </div>
         ))} */}
       </div>
+      {/* <API_test /> */}
       <Subhero />
     </div>
   )

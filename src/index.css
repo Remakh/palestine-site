@@ -5,6 +5,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 * {
   scroll-behavior: smooth;
   overscroll-behavior-y: none; 
@@ -40,7 +42,7 @@
 }
 
 .animation {
-  animation: fade 2 4s ease-in forwards
+  animation: fadeIn 4s ease-in forwards
 }
 
 .animationEnd {
@@ -55,7 +57,21 @@
   box-shadow: 10px 10px 5px lightblue inset;
 }
 
+#page-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0,0,0,0.6);
+}
 
+.background-front {
+  background-attachment: fixed;
+  background-size: initial; 
+  background-image: url('C:/FoP-website/palestine-site/src/assets/background-1.jpg');
+  
+}
 
 @keyframes underlineIn {
   
@@ -84,7 +100,7 @@
     @apply flex justify-center space-x-4 py-5 max-w-[800px] flex-wrap-reverse ;
   }
   .socials {
-      @apply border-x-2 py-5 px-12 hover:opacity-100 opacity-50
+      @apply border-x-2 py-5 px-12 hover:opacity-100 opacity-50 
     }
 
   /* .socials-icon {
