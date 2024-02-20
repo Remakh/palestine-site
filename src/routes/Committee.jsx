@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { s2, catf, catm } from '../assets'
 import CommitteeBox from '../components/CommitteeBox'
+import { Link, Outlet } from 'react-router-dom'
 
 const Committee = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0),
+    []
+  }
+  )
   return (
     <div className='min-h-[100vh] flex justify-center bg-cream'>
+      <Outlet />
       <div className='flex flex-col align-bottom text-center'>
         <h2 className='pt-5 text-5xl font-bold'>Meet our Committee</h2>
         <div className='flex flex-col pt-5 align-middle justify-center'>
@@ -13,7 +20,9 @@ const Committee = () => {
             <CommitteeBox image={catm} title={'Ex-Officio'} name={'Adnan Kassad'}  />
             <CommitteeBox image={catm} title={'Treasurer'} name={'Mahmoud Wahbeh'}  />
             <CommitteeBox image={catm} title={'General Secretary'} name={'Amro Sulaiman'}  />
-            <CommitteeBox image={catf} title={'President'} name={'Dana Abu Qamar'}  />
+            <Link to='dana'>
+              <CommitteeBox image={catf} title={'President'} name={'Dana Abu Qamar'}  />
+            </Link>
             <CommitteeBox image={catf} title={'Vice President'} name={'Shyemah El-Azzabi'}  />
           </div>
         </div>

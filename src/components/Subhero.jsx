@@ -10,7 +10,7 @@ import { pattern } from '../assets'
 
 const Subhero = () => {
   return (
-  <div className='flex flex-col bg-red-100' >
+  <div className='flex flex-col' >
       <div className='flex justify-center space-x-10  py-28 '>
         <VideoBox />
         <div className='border-l-2 border-black border-r-2'></div>

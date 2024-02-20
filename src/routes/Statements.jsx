@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+
 
 const Statements = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0),
+    []
+  }
+  )
   return (
     <div className=' bg-cream'>
     <div className='items-center align-middle flex justify-center'>

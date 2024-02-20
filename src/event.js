@@ -49,5 +49,8 @@ export async function getEvent( id ) {
     return event[0]
 }
 
+export async function getEvents() {
+    return events
+}
 
 export default events

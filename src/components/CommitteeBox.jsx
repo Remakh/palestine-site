@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { catf } from '../assets'
 
 const CommitteeBox = ( {image, title, name, color} ) => {
-    const [toggle, setToggle] = useState(false)
 
     return (
         <div>

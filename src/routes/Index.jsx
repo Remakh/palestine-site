@@ -7,6 +7,11 @@ import API_test from '../components/API_test'
 
 
 const Index = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0),
+    []
+  }
+  )
   const [display, setDisplay] = useState("-translate-x-[0%]")
   const imcount = 3*100
   

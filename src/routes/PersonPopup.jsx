@@ -1,13 +1,11 @@
 import React from 'react'
-import { catf } from '../assets'
-import { LoaderFunction } from 'react-router-dom'
+import { catf, catm } from '../assets'
 import { useLoaderData } from 'react-router-dom'
-import committee_members from '../committee'
-
+import { useNavigate } from 'react-router-dom'
 
 const committe_members = [
   {
-      name: 'Dana',
+      name: 'dana',
       data: {
             name: 'Dana Abu Qamar',
             picture: catf,
@@ -16,7 +14,7 @@ const committe_members = [
       }
   },
   {
-    name: 'Reean Khan',
+    name: 'Reean',
     data: {
       name: 'Reean Khan',
       picture: catm,
@@ -27,19 +25,21 @@ const committe_members = [
 ]
 
 export async function loader( {params} ) {
-  return committe_members[params]
+  const obj = committe_members.filter((obj) => obj.name === params.name)[0]
+  return obj.data
 }
 
 const PersonPopup = () => {
-
+  const navigate = useNavigate()
   const person = useLoaderData()
-  
+
   return (
     <div className= {`w-full h-full absolute flex justify-center`}>
         <div className='fixed bg-black opacity-90 w-full h-full z-1 '></div>
         <div className='absolute translate-y-1/3 mx-auto p-4 bg-white z-auto '>
-        <img src={person.picture} className='h-[400px]' />
+        <img src={person.picture} className='h-[400px]' onClick={() => navigate(-1)}/>
         <h2>{person.name}</h2>
+        <p>{person.description}</p>
       </div>
     </div>
   )

@@ -10,8 +10,9 @@ import Statements from './routes/Statements.jsx'
 import Committee from './routes/Committee.jsx'
 import EventPage from './routes/EventPage.jsx'
 import { loader as EventLoader } from './components/EventHeader.jsx'
-// import PersonPopup from './components/PersonPopup.jsx'
-// import { loader as CommitteeLoader } from './components/PersonPopup.jsx'
+import {loader as EventsLoader} from './routes/Events.jsx'
+import PersonPopup from './routes/PersonPopup.jsx'
+import { loader as CommitteeLoader } from './routes/PersonPopup.jsx'
 
 const Err = () => {
   const error = useRouteError()
@@ -39,17 +40,18 @@ const router = createBrowserRouter([
       {
         path: '/Committee',
         element: <Committee />,
-        // children: [
-        //   {
-        //     path: '/:name',
-        //     element: <PersonPopup />,
-        //     loader: CommitteeLoader
-        //   }
-        // ]
+        children: [
+          {
+            path: '/Committee/:name',
+            element: <PersonPopup />,
+            loader: CommitteeLoader
+          }
+        ]
       },
       {
         path: '/Events',
-        element: <Events />
+        element: <Events />,
+        loader: EventsLoader
       },
       {
         path: '/Events/:id',

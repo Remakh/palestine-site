@@ -1,12 +1,23 @@
 import React from 'react'
 import Calendar from 'react-calendar';
-import { useState } from 'react';
+import { useEffect } from 'react';
 import EventBox from '../components/EventBox';
 import { logo2, s1, s2, s3 } from '../assets';
-import events from '../event';
+import { getEvents } from '../event';
+import { useLoaderData } from 'react-router-dom';
 
+export async function loader() {
+  return getEvents()
+}
 
 const Events = () => {
+
+  const events = useLoaderData()
+  useEffect(() => {
+    window.scrollTo(0, 0),
+    []
+  }
+  )
   return (
     <div className='justify-center flex bg-cream pb-52'>
       <div className='w-8/12 '>
