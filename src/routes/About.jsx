@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
-import { logo2, s2 } from '../assets'
 import SocialsBox from '../components/SocialsBox'
 
 
 const About = () => {
   useEffect(() => {
-    window.scrollTo(0, 0), []}
-  )
+    window.scrollTo(0, 0)}, [])
+    
   return (
     <div className='flex flex-col items-center bg-cream border-b shadow-lg min-h-[100vh]'>
       <div className=' flex-grow-1 flex flex-col align-top w-8/12 h-full bg-cream p-10'>

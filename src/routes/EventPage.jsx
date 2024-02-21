@@ -5,10 +5,8 @@ import { useEffect } from 'react'
 
 const EventPage = () => {
   useEffect(() => {
-    window.scrollTo(0, 0),
-    []
-  }
-  )
+    window.scrollTo(0, 0)}, [])
+    
   return (
     <div className='flex min-h-[100vh] justify-center'>
         <div className='w-8/12'>

@@ -8,10 +8,8 @@ import API_test from '../components/API_test'
 
 const Index = () => {
   useEffect(() => {
-    window.scrollTo(0, 0),
-    []
-  }
-  )
+    window.scrollTo(0, 0)}, [])
+
   const [display, setDisplay] = useState("-translate-x-[0%]")
   const imcount = 3*100
   
@@ -36,7 +34,7 @@ const Index = () => {
       <div className={`flex w-[${imcount*100}%] relative`}>
         <Hero position={display}/>
         {images.map((image) => (
-          <img src={image} className={`min-w-[100%] max-h-[1000px] object-cover ${display} transition-all ease-out duration-1000  }  `}/>
+          <img src={image} className={`min-w-full h-full object-cover ${display} transition-all ease-out duration-1000  }  `}/>
         ))}
         <button onClick={handleClickRight} className = 'opacity-30 hover:opacity-70 text-3xl absolute font-serif right-0 top-1/2 mr-10 -translate-y-1/2 bg-black text-white px-4 py-2 rounded-full'>{'⮞'}</button>
         <button onClick={handleClickLeft} className = 'opacity-30 hover:opacity-70 absolute text-3xl font-serif top-1/2 left-0 ml-10 -translate-y-1/2 bg-black text-white px-4 py-2 rounded-full'>{'⮜'}</button>

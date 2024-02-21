@@ -5,10 +5,8 @@ import { Link, Outlet } from 'react-router-dom'
 
 const Committee = () => {
   useEffect(() => {
-    window.scrollTo(0, 0),
-    []
-  }
-  )
+    window.scrollTo(0, 0)}, [])
+
   return (
     <div className='min-h-[100vh] flex justify-center bg-cream'>
       <Outlet />
@@ -17,13 +15,21 @@ const Committee = () => {
         <div className='flex flex-col pt-5 align-middle justify-center'>
           <h3 id='Board' className=' font-semibold'>Board of Directors</h3>
           <div id='Board' className='committee-group'>
+          <Link to='Adnan'>            
             <CommitteeBox image={catm} title={'Ex-Officio'} name={'Adnan Kassad'}  />
+          </Link>
+          <Link to='Mahmoud'>
             <CommitteeBox image={catm} title={'Treasurer'} name={'Mahmoud Wahbeh'}  />
+          </Link> 
+          <Link to='Amro'>
             <CommitteeBox image={catm} title={'General Secretary'} name={'Amro Sulaiman'}  />
-            <Link to='dana'>
-              <CommitteeBox image={catf} title={'President'} name={'Dana Abu Qamar'}  />
-            </Link>
+          </Link>
+          <Link to='Dana'>
+            <CommitteeBox image={catf} title={'President'} name={'Dana Abu Qamar'}  />
+          </Link>
+          <Link to='Shyemah'>
             <CommitteeBox image={catf} title={'Vice President'} name={'Shyemah El-Azzabi'}  />
+          </Link>
           </div>
         </div>
         

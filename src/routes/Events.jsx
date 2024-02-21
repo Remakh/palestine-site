@@ -12,12 +12,11 @@ export async function loader() {
 
 const Events = () => {
 
-  const events = useLoaderData()
   useEffect(() => {
-    window.scrollTo(0, 0),
-    []
-  }
-  )
+    window.scrollTo(0, 0)}, [])
+    
+  const events = useLoaderData()
+
   return (
     <div className='justify-center flex bg-cream pb-52'>
       <div className='w-8/12 '>
