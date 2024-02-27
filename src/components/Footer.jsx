@@ -6,7 +6,7 @@ import { FOPLogo, title } from '../assets'
 
 const Footer = () => {
   return (
-    <div className=' bg-beige flex justify-center bottom-0 w-full h-full' id='footer'>
+    <div className=' bg-beige flex justify-center bottom-0 w-full h-full relative' id='footer'>
       <div className='w-8/12 flex flex-col'>
       <div className='flex justify-evenly w-full mb-0 bottom-0 mx-auto border-b border-black'>
             <div className='py-10'>
@@ -32,7 +32,6 @@ const Footer = () => {
       <div>
       <p className='my-4 text-right'> © 2024 Unversity of Manchseter Friends of Palestine Society </p>
       </div>
-
       </div>
     </div>
   )

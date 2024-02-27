@@ -35,7 +35,9 @@ const Committee = () => {
         
         <h3 className='font-semibold'>Politics Team</h3>
         <div id='Politics' className='committee-group'>
+        <Link to='Deema'>
           <CommitteeBox image={catf} title={'Politics Lead'} name={'Deema Ashiq'}  />
+        </Link>
           <CommitteeBox image={catm} title={'Politics Member'} name={'William Salhab'}  />
           <CommitteeBox image={catm} title={'Politics Member'} name={'Jousef Bakir'}  />
         </div>

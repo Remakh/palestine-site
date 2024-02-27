@@ -15,7 +15,7 @@ const Navbar = () => {
           <img src={title} className=' w-[300px] my-auto p-3 rounded-full'/>    
           </Link>    
       </div>
-      <nav className='flex flex-grow-1 text-lg align-middle -translate-x-28'>
+      <nav className='flex flex-grow-1 text-lg align-middle'>
             <ul id='navbar' className='flex space-x-10 my-auto '>
               <NavLink
                 to='/'
@@ -71,9 +71,14 @@ const Navbar = () => {
               </NavLink>
             </ul>
         </nav>
-            <a href='https://manchesterstudentsunion.com/shop/product/7425-' target='_blank' className='my-auto px-5 py-2 bg-gold text-black rounded-lg text-nowrap '>
-                <p className=' text-lg'>Join the Society ☺</p>
+        <div className='flex space-x-10'>
+            <a href='https://manchesterstudentsunion.com/shop/product/7425-' target='_blank' className='my-auto  text-white rounded-lg text-nowrap '>
+                <p className='hover:underline text-lg'>Join the Society</p>
             </a>
+            <Link to='/Login' className='my-auto  hover:underline text-white rounded-lg text-nowrap '>
+                <p className=' text-lg'>Admin Login</p>
+            </Link>
+        </div>
       </div>
   );
 };

@@ -13,6 +13,8 @@ import { loader as EventLoader } from './components/EventHeader.jsx'
 import {loader as EventsLoader} from './routes/Events.jsx'
 import PersonPopup from './routes/PersonPopup.jsx'
 import { loader as CommitteeLoader } from './routes/PersonPopup.jsx'
+import Login from './routes/Login.jsx'
+import {action as loginAction} from './routes/Login.jsx'
 
 const Err = () => {
   const error = useRouteError()
@@ -32,6 +34,11 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Index /> 
+      },
+      {
+        path: '/Login',
+        element: <Login />,
+        action: loginAction
       },
       {
         path: '/About',
