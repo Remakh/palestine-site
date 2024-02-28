@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom'
 import { FOPLogo, title } from '../assets'
+import { useAuth } from '../hooks/useAuth';
+import { logoutCall } from '../apiUtils';
 const Navbar = () => {
 
   const buttons = 'bg-white rounded text-black'
+  const { isAuthenticated, logout } = useAuth()
 
+  const handleLogout = async () => {
+    await logoutCall()
+    logout()
+  }  
+  
   return (
     <div className='w-11/12 mx-auto sticky top-0 flex text-white overflow-visible justify-between'>
       <div className='flex'>
@@ -76,8 +84,9 @@ const Navbar = () => {
                 <p className='hover:underline text-lg'>Join the Society</p>
             </a>
             <Link to='/Login' className='my-auto  hover:underline text-white rounded-lg text-nowrap '>
-                <p className=' text-lg'>Admin Login</p>
+                <p className=' text-lg'>{isAuthenticated ? 'Logout' : 'Admin Login'}</p>
             </Link>
+            <button onClick={handleLogout} type='button'>Logout</button>
         </div>
       </div>
   );

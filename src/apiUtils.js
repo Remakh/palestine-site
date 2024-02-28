@@ -1,7 +1,5 @@
 import axios from "axios";
 
-axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.withCredentials = true;
 axios.defaults.baseURL = 'http://127.0.0.1:8000/api'
 
@@ -23,21 +21,21 @@ const createEvent = async (request) => {
 
 }
 
-const login = async (formData) => {
-    console.log(formData)
+const  loginCall = async (formData) => {
     const response = await axios.post('/login/', formData)
-    console.log(response)
+    const authToken = response.data.token;
+    localStorage.setItem('authToken', authToken); 
+    return authToken;
+}
+
+const logoutCall = async () => {
+    const response = await axios.post('/logout/')
     return response
 }
 
-const logout = async () => {
-    const response = await axios.post('/logout/', formData)
-    return response
-}
-
-const user = async () => {
+const userDetail = async () => {
     const response = await axios.get('/user/')
     return response
 }
 
-export { getEvent, getEvent, createEvent, login, logout, user }
+export { getEvent, getEvent, createEvent, loginCall, logoutCall, userDetail }

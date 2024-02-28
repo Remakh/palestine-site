@@ -39,7 +39,7 @@ const committe_members = [
       name: 'Mahmoud Wahbeh',
       picture: catm,
           title: 'Treasurer',
-          description: 'Secretly embezzles money to fund his olive tree farm.'
+          description: 'Secretly a spy for arab soc.'
     }
   },
   {
@@ -66,7 +66,7 @@ const committe_members = [
       name: 'Deema Ashiq',
       picture: catf,
           title: 'Politics Lead',
-          description: 'Not scared of Israel, but very scared of frogs.'
+          description: 'Not scared of Israel, but terrified of frogs.'
     }
   },
 ]

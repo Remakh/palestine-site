@@ -14,7 +14,7 @@ import {loader as EventsLoader} from './routes/Events.jsx'
 import PersonPopup from './routes/PersonPopup.jsx'
 import { loader as CommitteeLoader } from './routes/PersonPopup.jsx'
 import Login from './routes/Login.jsx'
-import {action as loginAction} from './routes/Login.jsx'
+
 
 const Err = () => {
   const error = useRouteError()
@@ -38,7 +38,6 @@ const router = createBrowserRouter([
       {
         path: '/Login',
         element: <Login />,
-        action: loginAction
       },
       {
         path: '/About',
@@ -74,6 +73,7 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+
   <React.StrictMode>
     <RouterProvider router={router}/>
   </React.StrictMode>,

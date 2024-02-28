@@ -14,7 +14,7 @@ const Index = () => {
   const imcount = 3*100
   
   const handleClickRight = () => {
-    if (display === "-translate-x-[0%]c") {
+    if (display === "-translate-x-[0%]") {
       setDisplay("-translate-x-[100%]")
     }  else {
       setDisplay("-translate-x-[200%]")
