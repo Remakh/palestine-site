@@ -9,7 +9,6 @@ const VideoBox = () => {
         height="415" 
         src="https://www.youtube.com/embed/1aqnwXKFD0k?si=PJLx-7bp1YXKGiH3" 
         title="YouTube video player" 
-        frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" 
         >    
       </iframe>

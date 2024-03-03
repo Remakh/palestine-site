@@ -31,7 +31,7 @@ const Index = () => {
   const images = [s1, s2]
   return (
     <div className='w-full  overflow-hidden'>
-      <div className={`flex w-[${imcount*100}%] relative`}>
+      <div className={`flex w-[${imcount*100}%] relative h-[100vh]`}>
         <Hero position={display}/>
         {images.map((image) => (
           <img src={image} className={`min-w-full h-full object-cover ${display} transition-all ease-out duration-1000  }  `}/>

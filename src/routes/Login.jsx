@@ -1,24 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FOPLogo } from '../assets'
-import { Form, useActionData } from 'react-router-dom'
+import { Form, useNavigate } from 'react-router-dom'
 import { loginCall } from '../apiUtils'
 import { useAuth } from '../hooks/useAuth'
 
+export const action = () => {
+    return undefined
+}
+
+
 const Login = () => {
+    const { login, isAuthenticated } = useAuth();
+    const navigate = useNavigate()
+    
+    useEffect(() => {
+        if (isAuthenticated) {
+            navigate('/')
+        }
+    }, [])
 
     const [isChecked, setIsChecked] = useState(false)
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const v = useAuth();
     
     const handleLogin = async (e) => {
         e.preventDefault()
         
-        const token = await loginCall({
+        const token = await login({
             username: username,
             password: password
         })
-        console.log(token)
+
+        navigate('/')
     }
 
     return (

@@ -1,7 +1,9 @@
 import axios from "axios";
 
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 axios.defaults.baseURL = 'http://127.0.0.1:8000/api'
+
+
 
 const getEvents = async () => {
 
@@ -14,28 +16,28 @@ const getEvent = async (id) => {
     return event
 }
 
-const createEvent = async (request) => {
-    const formData = await request.formData();
-    const updates = Object.fromEntries(formData);
-    const response = await axios.post('/event-add/', request.formData)
+const createEvent = async (data, config) => {
+    const response = await axios.post('/event-add/', data, config)
+    console.log(response)
+    return response
 
 }
 
 const  loginCall = async (formData) => {
-    const response = await axios.post('/login/', formData)
+    const response = await axios.post('/token-auth/', formData)
     const authToken = response.data.token;
-    localStorage.setItem('authToken', authToken); 
     return authToken;
+
 }
 
-const logoutCall = async () => {
-    const response = await axios.post('/logout/')
+const logoutCall = async (config) => {
+    const response = await axios.post('/logout/', null, config)
     return response
 }
 
-const userDetail = async () => {
-    const response = await axios.get('/user/')
-    return response
-}
+// const userDetail = async () => {
+//     const response = await axios.get('/user/')
+//     return response
+// }
 
-export { getEvent, getEvent, createEvent, loginCall, logoutCall, userDetail }
+export { getEvent, getEvent, createEvent, loginCall, logoutCall }

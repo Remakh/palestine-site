@@ -69,8 +69,9 @@
 
 .background-front {
   background-attachment: fixed;
-  background-size: initial; 
-  background-image: url('assets/background-1.jpg');
+  background-image: url('https://wallpapers.com/images/featured/palestine-75yqzvkpketv5cob.jpg  ');
+  background-size: cover;; 
+  background-blend-mode: lighten;
   
 }
 

@@ -10,10 +10,13 @@ import Statements from './routes/Statements.jsx'
 import Committee from './routes/Committee.jsx'
 import EventPage from './routes/EventPage.jsx'
 import { loader as EventLoader } from './components/EventHeader.jsx'
+import {action as LoginAction} from './routes/Login.jsx'
 import {loader as EventsLoader} from './routes/Events.jsx'
 import PersonPopup from './routes/PersonPopup.jsx'
 import { loader as CommitteeLoader } from './routes/PersonPopup.jsx'
+import { action as CreateEventAction } from './routes/CreateEvent.jsx'
 import Login from './routes/Login.jsx'
+import CreateEvent from './routes/CreateEvent.jsx'
 
 
 const Err = () => {
@@ -38,6 +41,7 @@ const router = createBrowserRouter([
       {
         path: '/Login',
         element: <Login />,
+        action: LoginAction
       },
       {
         path: '/About',
@@ -63,7 +67,12 @@ const router = createBrowserRouter([
         path: '/Events/:id',
         element: <EventPage />,
         loader: EventLoader
-        },
+      },
+      {
+        path: '/Create-Event',
+        element: <CreateEvent />,
+        action: CreateEventAction
+      },
       {
         path: '/Statements',
         element: <Statements />

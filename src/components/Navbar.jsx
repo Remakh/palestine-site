@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, redirect, useNavigate } from 'react-router-dom'
 import { FOPLogo, title } from '../assets'
 import { useAuth } from '../hooks/useAuth';
 import { logoutCall } from '../apiUtils';
 const Navbar = () => {
 
   const buttons = 'bg-white rounded text-black'
-  const { isAuthenticated, logout } = useAuth()
+  const { isAuthenticated, logout, authToken } = useAuth()
 
   const handleLogout = async () => {
-    await logoutCall()
-    logout()
+    const config = {
+      headers : {
+        'Authorization': `Token ${authToken}`
+      }
+    }
+    const response = await logout(config)
+    return redirect('/')
   }  
   
   return (
@@ -39,7 +44,7 @@ const Navbar = () => {
                 to='/About'
                 className={( {isActive, isPending} ) => (
                   isPending ? 'hoover:bg-white hoover:text-black' : 
-                  isActive ? 'bg-white rounded text-black group' 
+                  isActive ? 'bg-red-500 rounded text-black group' 
                   : "hoover:bg-white hoover:text-black group"
                   ) }>
               <Link to='/About' className=''>
@@ -50,7 +55,7 @@ const Navbar = () => {
                 to='/Committee'
                 className={( {isActive, isPending} ) => (
                   isPending ? 'hoover:bg-white hoover:text-black' : 
-                  isActive ? 'bg-white rounded text-black group' 
+                  isActive ? 'bg-green-500 rounded text-black group' 
                   : "hoover:bg-white hoover:text-black group"
                   ) }>
               <Link to='/Committee' className=''>
@@ -60,7 +65,7 @@ const Navbar = () => {
               <NavLink
                 to='/Events'
                 className={( {isActive, isPending} ) => (
-                  isActive ?buttons
+                  isActive ? buttons
                   : ""
                   )}>
               <Link to='/Events'>
@@ -81,12 +86,17 @@ const Navbar = () => {
         </nav>
         <div className='flex space-x-10'>
             <a href='https://manchesterstudentsunion.com/shop/product/7425-' target='_blank' className='my-auto  text-white rounded-lg text-nowrap '>
-                <p className='hover:underline text-lg'>Join the Society</p>
+                {isAuthenticated ? '' : <p className='hover:underline text-lg'>Join the Society</p>}
             </a>
-            <Link to='/Login' className='my-auto  hover:underline text-white rounded-lg text-nowrap '>
-                <p className=' text-lg'>{isAuthenticated ? 'Logout' : 'Admin Login'}</p>
-            </Link>
-            <button onClick={handleLogout} type='button'>Logout</button>
+            { isAuthenticated 
+                ? 
+                <button onClick={handleLogout} type='button'>Logout</button>
+                :
+              <Link to='/Login' className='my-auto  hover:underline text-white rounded-lg text-nowrap '>
+                  <p className=' text-lg'>Admin Login</p>
+              </Link> 
+
+            }
         </div>
       </div>
   );

@@ -45,7 +45,7 @@ const EventHeader = () => {
                             &q=${event.location}`}>
                     </iframe>
                 </div>
-                </div>
+            </div>
         </div>
         
 
