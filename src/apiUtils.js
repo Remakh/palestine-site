@@ -16,11 +16,29 @@ const getEvent = async (id) => {
     return event
 }
 
-const createEvent = async (data, config) => {
-    const response = await axios.post('/event-add/', data, config)
-    console.log(response)
-    return response
+const createEvent = async (form, config) => {
+    try {
+        const formData = new FormData();
 
+        formData.append("name", form.name);
+        formData.append("description", form.description);
+        formData.append("date", form.date );
+        formData.append("time", form.time);
+        formData.append("location", form.location);
+        formData.append("imagePath", form.imagePath, form.imagePath.name);
+    
+        const response = await axios.post('/event-add/', formData, config)
+        return response
+    } catch (err) {
+        if (err.response) {
+            console.error('Server Error:', err.response.status);
+            console.error('Response Data:', err.response.data);
+      } else if (err.request) {
+        console.error('Request Error:', err.request);
+      } else {
+        console.error('Error:', err.message);
+      }
+    }
 }
 
 const  loginCall = async (formData) => {
@@ -40,4 +58,4 @@ const logoutCall = async (config) => {
 //     return response
 // }
 
-export { getEvent, getEvent, createEvent, loginCall, logoutCall }
+export { getEvents, getEvent, createEvent, loginCall, logoutCall }

@@ -5,7 +5,8 @@ import { useAuth } from '../hooks/useAuth'
 
 
 export const action = async (request) => {
-    return redirect(`/Events`);}
+    return redirect('/Events')
+}
 
 const CreateEvent = () => {
 
@@ -15,25 +16,27 @@ const CreateEvent = () => {
         date: '2019-12-12',
         time: '10:00',
         location: 'hanoi, vietnam',
-        image: ''
+        imagePath: ''
+        
     })
+
     
+
     const { authToken } = useAuth()
     const handleCreateEvent = async () => {
         const config = {
             headers : {
-              'Authorization': `Token ${authToken}`
+              'Authorization': `Token ${authToken}`,
+              'Content-Type': 'multipart/form-data'
             }
           }
         await createEvent(form, config)
     }
 
-
-
   return (
     <div className='min-h-[100vh] flex justify-center'>
         <div className='w-4/12 mt-16'>
-        <Form method="post" id='login-form' className='bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4 w-full mt-5  border-2 items-center'>
+        <Form encType="multipart/form-data" method="post" id='login-form' className='bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4 w-full mt-5  border-2 items-center'>
             <h2 className='text-font font-semibold text-green-800'>Create Event</h2>
             <div class="mb-4 py-5">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Name</label>
@@ -87,24 +90,28 @@ const CreateEvent = () => {
                 <div class="mb-4 py-5">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Location</label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline" 
-                    onChange={(e) => setForm({
+                    onChange={(e) => {setForm({
                     ...form, 
                     location : e.target.value
-                })} id="location" 
+                })}} 
+                    id="location" 
                     type='text' 
                     placeholder="Hanoi, Vietnam" 
                     name='location'
                     value={form.location} />
                 </div>
                 <div class="mb-4 py-5">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="image">Image</label>
+                
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="imagePath">Image</label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline" 
                     onChange={(e) => {setForm({
-                    ...form, 
-                    image : e.target.value
-                }); console.log(form)}} id="image" 
+                                        ...form, 
+                                        imagePath : e.target.files[0]
+                }); console.log(form)}} 
+                    id="imagePath" 
                     type='file' 
-                    name='image'
+                    name='imagePath'
+                    accept="image/jpeg,image/png,image/gif"
                      />
                 </div>
 
