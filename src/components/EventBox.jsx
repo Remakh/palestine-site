@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const EventBox = ( {id, title, image, date, time, location, description} ) => {
   return (
       <div className='bg-slate-50 rounded-xl w-80 flex flex-col border-slate-50 shadow-lg'>
-        <img src={image} className=' mb-2 h-32 object-cover w-full min-w-[100%] rounded-t-xl' /> 
+        <img src={`http://127.0.0.1:8000/${image}`} className=' mb-2 h-32 object-cover w-full min-w-[100%] rounded-t-xl' /> 
         <div className=' px-4 whitespace-normal text-left border-b border-slate-200'>
             <h4 className='text-font py-3 font-semi-bold'> {title}</h4> 
         </div>

@@ -13,10 +13,9 @@ export async function loader() {
 }
 
 const Events = () => {
-
+  const api = 'http://127.0.0.1:8000'
   useEffect(() => {
     window.scrollTo(0, 0)}, [])
-  const { isAuthenticated } = useAuth()
   const events = useLoaderData()
   console.log(events)
 
@@ -26,15 +25,14 @@ const Events = () => {
         <div className='flex flex-col pt-10 align-center'> 
         <div className='text-font text-center flex-col space-y-3'>
 
-          {isAuthenticated ? <h2 className='font-semi-bold'>Events</h2>: <h2 className='font-semi-bold'>Upcoming Events</h2> }
-          {isAuthenticated ? <></>: <h4 > Come support Palestine! </h4>}
-          {isAuthenticated ? <Link to='/Create-Event'>Add Event</Link> : ''}
+          {<h2 className='font-semi-bold'>Upcoming Events</h2> }
+          {<h4 > Come support Palestine! </h4>}
         </div>
         
         <div className='flex justify-center'>
           <ul className='flex mt-24 sm:flex-col md:flex-row space-x-10'>
             {events.map((e, index) => {
-              return <li key={e.id}><EventBox id={e.id} title={e.name} image={e.image} date={e.date} description={e.description} location={e.location} time={e.time} /></li>
+              return <li key={e.id}><EventBox id={e.id} title={e.name} image={`${api}/${e.imagePath}`} date={e.date} description={e.description} location={e.location} time={e.time} /></li>
             })}
           </ul>
         </div>

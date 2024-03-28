@@ -2,7 +2,7 @@ import React from 'react'
 
 const VideoBox = () => {
   return (
-    <div className='w-1/3 h-[415px] '>
+    <div className='md:w-1/3 w-full md:h-[415px] h-[300px] '>
       <iframe 
         className='my-auto w-full h-full'
         width="560" 

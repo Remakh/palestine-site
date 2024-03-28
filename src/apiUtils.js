@@ -12,7 +12,7 @@ const getEvents = async () => {
 }
 
 const getEvent = async (id) => {
-    const event = await axios.get(`/event/${id}`)
+    const event = await axios.get(`/events/${id}`)
     return event
 }
 

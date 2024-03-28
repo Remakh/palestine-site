@@ -20,8 +20,6 @@ const CreateEvent = () => {
         
     })
 
-    
-
     const { authToken } = useAuth()
     const handleCreateEvent = async () => {
         const config = {
@@ -33,6 +31,20 @@ const CreateEvent = () => {
         await createEvent(form, config)
     }
 
+    const handleChange = (e) => {
+        setForm({
+            ...form,
+          [e.target.id]: e.target.value
+        })
+      };
+    
+    const handleImageChange = (e) => {
+        setForm({
+            ...form,
+          imagePath: e.target.files[0]
+        })
+      };
+
   return (
     <div className='min-h-[100vh] flex justify-center'>
         <div className='w-4/12 mt-16'>
@@ -43,20 +55,14 @@ const CreateEvent = () => {
                 <input 
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline" 
                     value={form.name}
-                    onChange={(e) => {setForm({
-                                            ...form, 
-                                            name : e.target.value
-                                        }); console.log(form)}} id="name" type='text'  placeholder="Name" name='Name' />
+                    onChange={(e) => handleChange} id="name" type='text'  placeholder="Name" name='Name' />
             </div>
             <div>
                 <label className='font-bold text-gray-700 text-sm' for="password">Description</label>
                 <textarea 
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline" 
                     value={form.description}
-                    onChange={(e) => setForm({
-                                ...form, 
-                                description : e.target.value
-                            })}     
+                    onChange={(e) => handleChange}     
                     id="description" 
                     type='text' 
                     placeholder="Come and visit..." 
@@ -68,19 +74,13 @@ const CreateEvent = () => {
                     <input 
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline" 
                         value={form.date}
-                        onChange={(e) => setForm({
-                            ...form, 
-                            date : e.target.value
-                        })} id="name" type='date'  placeholder="Name" name='Name' />
+                        onChange={handleChange} id="name" type='date'  placeholder="Name" name='Name' />
                 </div>
                 <div className='w-1/2'>
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="time">Time</label>
                 <input 
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline" 
-                    onChange={(e) => setForm({
-                        ...form, 
-                        time : e.target.value
-                    })} 
+                    onChange={handleChange} 
                     id="time" 
                     type='time' 
                     name='time' 
@@ -90,10 +90,7 @@ const CreateEvent = () => {
                 <div class="mb-4 py-5">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Location</label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline" 
-                    onChange={(e) => {setForm({
-                    ...form, 
-                    location : e.target.value
-                })}} 
+                    onChange={handleChange} 
                     id="location" 
                     type='text' 
                     placeholder="Hanoi, Vietnam" 
@@ -104,10 +101,7 @@ const CreateEvent = () => {
                 
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="imagePath">Image</label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline" 
-                    onChange={(e) => {setForm({
-                                        ...form, 
-                                        imagePath : e.target.files[0]
-                }); console.log(form)}} 
+                    onChange={handleImageChange} 
                     id="imagePath" 
                     type='file' 
                     name='imagePath'
@@ -115,7 +109,7 @@ const CreateEvent = () => {
                      />
                 </div>
 
-                <button onClick={() => handleCreateEvent()}class="mt-10 bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded-xl w-full" type='submit'>
+                    <button onClick={() => handleCreateEvent()}class="mt-10 bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded-xl w-full" type='submit'>
                     Create Event
                 </button>
         </Form>

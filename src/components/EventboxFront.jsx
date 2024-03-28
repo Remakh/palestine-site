@@ -1,16 +1,29 @@
-import React from 'react'
-import events from '../event'
+import React, { useEffect, useState } from 'react'
 import EventBox from './EventBox'
+import { getEvents } from '../apiUtils'
 
-const EventboxFront = () => {
+const data = async () => {
+  const response = await getEvents()
+  return response.data
+}
+
+const  EventboxFront =  () => {
+  const [events, setEvents] = useState([])
+  useEffect(  () => {
+    async function fetchData() {
+      setEvents(await data())
+    }
+    fetchData()
+  }, [] )
+  
   return (
     <div className='text-center bg-green-800 p-4'>
     <h1 className='text-white font-normal text-font font-Open-sans pt-10'>Upcoming Events</h1>
       <div className='mt-10'>
-              <ul className="flex flex-row justify-items-center justify-center space-x-28 pb-28">    
+              <ul className="flex md:flex-row align-middle items-center md:space-y-0 space-y-7 mx-auto justify-center md:space-x-28 pb-28 flex-col ">    
                 {events.slice(0, 2).map((e) => (
                     <li className="" key={e.id}>
-                      <EventBox id={e.id} title={e.title} description={e.description} image={e.image} location={e.location} date={e.date} time={e.time} />
+                      <EventBox id={e.id} title={e.title} description={e.description} image={e.imagePath} location={e.location} date={e.date} time={e.time} />
                 </li>
               ))}        
           </ul>

@@ -1,102 +1,118 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink, redirect, useNavigate } from 'react-router-dom'
 import { FOPLogo, title } from '../assets'
-import { useAuth } from '../hooks/useAuth';
-import { logoutCall } from '../apiUtils';
+import { IoClose } from "react-icons/io5";
+import { IoIosMenu } from "react-icons/io";
+import { FaSortDown } from "react-icons/fa";
 const Navbar = () => {
+  useEffect(() => {
+    setOpen(false)
+  }, []
+  )
+  const buttons = 'bg-white rounded text-black' 
+  const [open, setOpen] = useState(false)
+  const [aboutOpen, setAboutOpen] = useState(false)
+  console.log(aboutOpen)
 
-  const buttons = 'bg-white rounded text-black'
-  const { isAuthenticated, logout, authToken } = useAuth()
-
-  const handleLogout = async () => {
-    const config = {
-      headers : {
-        'Authorization': `Token ${authToken}`
-      }
-    }
-    const response = await logout(config)
-    return redirect('/')
-  }  
-  
   return (
-    <div className='w-11/12 mx-auto sticky top-0 flex text-white overflow-visible justify-between'>
+    <div className='w-11/12 '>
+      <div className='w-11/12 mx-auto sticky top-0 md:flex text-white overflow-visible justify-between hidden'>
       <div className='flex'>
         <Link to='/'>
           <img src={FOPLogo} className=' w-[100px] my-auto p-3 rounded-full'/>
         </Link>
-        <Link to='/' className='my-auto'>
+        {/* <Link to='/' className='my-auto'>
           <img src={title} className=' w-[300px] my-auto p-3 rounded-full'/>    
-          </Link>    
+          </Link>     */}
       </div>
       <nav className='flex flex-grow-1 text-lg align-middle'>
-            <ul id='navbar' className='flex space-x-10 my-auto '>
-              <NavLink
-                to='/'
-                className={( {isActive, isPending} ) => (
-                  isActive ? buttons 
-                  : ""
-                  )}>
+            <ul id='navbar' className='flex space-x-10 my-auto '>           
               <Link to='/'>
                 <li>Home </li>
               </Link>
-              </NavLink>
-              <NavLink
+              {/* <NavLink
                 to='/About'
                 className={( {isActive, isPending} ) => (
                   isPending ? 'hoover:bg-white hoover:text-black' : 
-                  isActive ? 'bg-red-500 rounded text-black group' 
+                  isActive ? 'bg-white rounded text-black group' 
                   : "hoover:bg-white hoover:text-black group"
-                  ) }>
-              <Link to='/About' className=''>
-                <li>About </li>
+                ) }> */}
+              <Link to='/About' className='group hover:text-green-300'>
+                <li>About 🔻</li>
+                <Link to='/Statements'>
+                  <li className='invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus:visible group-focus:opacity-100 absolute bg-white text-black transition-opacity ease-in-out duration-500 hover:bg-green-400 hover:text-black '>Statements</li>
+                </Link>
               </Link>
-              </NavLink>
-              <NavLink
+              {/* </NavLink> */}
+              {/* <NavLink
                 to='/Committee'
                 className={( {isActive, isPending} ) => (
                   isPending ? 'hoover:bg-white hoover:text-black' : 
-                  isActive ? 'bg-green-500 rounded text-black group' 
+                  isActive ? 'bg-white rounded text-black group' 
                   : "hoover:bg-white hoover:text-black group"
-                  ) }>
+                ) }> */}
               <Link to='/Committee' className=''>
                 <li>Committee </li>
               </Link>
-              </NavLink>
-              <NavLink
+              {/* </NavLink> */}
+              {/* <NavLink
                 to='/Events'
                 className={( {isActive, isPending} ) => (
                   isActive ? buttons
                   : ""
-                  )}>
+                )}> */}
               <Link to='/Events'>
                 <li>Events </li>
               </Link>
-              </NavLink>
-              <NavLink
+              {/* </NavLink> */}
+              {/* <NavLink
                 to='/Statements'
                 className={( {isActive, isPending} ) => (
                   isActive ? buttons
                   : ""
-                  )}>
-              <Link to='/Statements'>
-                <li>Statements</li>
-              </Link>
-              </NavLink>
+                )}> */}
+              {/* </NavLink> */}
             </ul>
-        </nav>
-        <div className='flex space-x-10'>
-            <a href='https://manchesterstudentsunion.com/shop/product/7425-' target='_blank' className='my-auto  text-white rounded-lg text-nowrap '>
-                {isAuthenticated ? '' : <p className='hover:underline text-lg'>Join the Society</p>}
+        {/* <div className='flex space-x-10'>
+            <a href='https://manchesterstudentsunion.com/shop/product/7425-' target='_blank' className='bg-gold  px-2 py-2 my-auto  text-black rounded-lg text-nowrap '>
+            <p className='hover:underline text-lg'>Become a Member</p>
             </a>
-            { isAuthenticated 
-                ? 
-                <button onClick={handleLogout} type='button'>Logout</button>
-                :
-              <Link to='/Login' className='my-auto  hover:underline text-white rounded-lg text-nowrap '>
-                  <p className=' text-lg'>Admin Login</p>
-              </Link> 
+          </div> */}
+        </nav>
+          </div>
+          <div className='flex md:hidden justify-between'>
+          <nav className='flex flex-grow-1 text-lg align-middle flex-col '>
+            <div className='pt-10 pl-10'>
+            <IoIosMenu className={`my-auto ${open ? 'hidden' : ''} cursor-pointer`} color='white' size='20' onClick={() => setOpen(!open)}/>
+            <IoClose className={`my-auto ${open ? '' : 'hidden'} cursor-pointer`} color='white' size='20' onClick={() => setOpen(!open)}/>
+            </div>
+            <ul id='navbar' className={`pt-5  my-auto pl-10 pb-3  ${open ? 'block' : 'hidden'}`}>
+              <Link to='/'>
+                <li className='text-white'>Home </li>
+              </Link>
+              <div className='flex'>
+              <Link to='/About' className='text-white hover:text-green-300'>
+                <li>About</li> 
+              </Link>
+              <FaSortDown color='red' onClick={() => setAboutOpen(!aboutOpen)} className='my-auto cursor-pointer'/>
+              </div>
+              <Link to='/Statements'>
+                <li className={`text-white ${aboutOpen ? 'opacity-100 visible block' : 'opacity-0 invisible absolute'} transition-opacity ease-in-out duration-700 hover:bg-green-400 hover:text-black `}>Statements</li>
+              </Link>
+              <Link to='/Committee' className=''>
+                <li className='text-white'>Committee </li>
+              </Link>
+              <Link to='/Events'>
+                <li className='text-white'>Events </li>
+              </Link>
+            </ul>
+          </nav>
+          <div className='flex'>
+            <Link to='/'>
+              <img src={FOPLogo} className=' w-[100px] my-auto p-3 rounded-full'/>
+            </Link>
+          </div>
 
-            }
         </div>
       </div>
   );

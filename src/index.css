@@ -2,15 +2,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=Medula+One&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
-
 * {
   scroll-behavior: smooth;
-  overscroll-behavior-y: none; 
+}
+
+.each-slide-effect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 1000px;
+}
+
+.each-slide-effect span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+
+.medula-one-regular {
+  font-family: "Medula One", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 :root {
@@ -19,7 +39,6 @@
 
 #container {
   min-height: calc(100vh - 150px);
-
 }
 
 #navbar li {
@@ -36,7 +55,6 @@
 .title-font {
   font-family: 'Lato', sans-serif;
 }
-
 
 .text-font {
   font-family: 'Rubik', sans-serif;
@@ -68,11 +86,9 @@
 }
 
 .background-front {
-  background-attachment: fixed;
-  background-image: url('https://wallpapers.com/images/featured/palestine-75yqzvkpketv5cob.jpg  ');
-  background-size: cover;; 
+  background-image: url('https://uwidata.com/wp-content/uploads/2023/10/8.png');
+  background-size: cover;
   background-blend-mode: lighten;
-  
 }
 
 @keyframes underlineIn {
@@ -102,12 +118,16 @@
     @apply flex justify-center space-x-4 py-5 max-w-[800px] flex-wrap-reverse ;
   }
   .socials {
-      @apply border-x-2 py-5 px-12 hover:opacity-100 opacity-50 
+      @apply border-x-2 py-5 px-12 hover:opacity-100 opacity-50 items-center
     }
 
-  /* .socials-icon {
-      @apply 
-    } */
+  .front-slide {
+    @apply bg-cover md:h-[800px] 
+  }
+
+  .socials-icon {
+      @apply mx-auto
+    }
 
 }
 
