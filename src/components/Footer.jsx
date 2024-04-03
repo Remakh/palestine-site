@@ -26,7 +26,7 @@ const Footer = () => {
                 <li><Link to={'/Statements'}>Statements</Link></li>
               </ul>
             </div>
-            <img src={title} className='w-1/3 h-1/3 my-auto hidden md:block'/>
+            <img src={title} className='w-1/2 h-1/3 my-auto hidden md:block'/>
       </div>
       <div>
       <p className='my-4 md:text-right text-left'> © 2024 Unversity of Manchseter Friends of Palestine Society </p>
