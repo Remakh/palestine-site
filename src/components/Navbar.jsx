@@ -37,10 +37,24 @@ const Navbar = () => {
                   isActive ? 'bg-white rounded text-black group' 
                   : "hoover:bg-white hoover:text-black group"
                 ) }> */}
+              <a href='https://manchesterstudentsunion.com/shop/product/7425-' target='_blank'className='group hover:text-green-300'>
+                <li>Get Involved </li>
+                <Link to='/Emails'>
+                  <li className='invisible opacity-0 group-hover:visible group-hover:opacity-100  group-focus:opacity-100 absolute bg-white text-black transition-opacity ease-in-out duration-500 hover:bg-green-400 hover:text-black '>Email Campgains</li>
+                </Link>
+              </a>
+              {/* <NavLink
+                to='/About'
+                className={( {isActive, isPending} ) => (
+                  isPending ? 'hoover:bg-white hoover:text-black' : 
+                  isActive ? 'bg-white rounded text-black group' 
+                  : "hoover:bg-white hoover:text-black group"
+                ) }> */}
+                
               <Link to='/About' className='group hover:text-green-300'>
                 <li>About 🔻</li>
                 <Link to='/Statements'>
-                  <li className='invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus:visible group-focus:opacity-100 absolute bg-white text-black transition-opacity ease-in-out duration-500 hover:bg-green-400 hover:text-black '>Statements</li>
+                  <li className='invisible opacity-0 group-hover:visible group-hover:opacity-100  group-focus:opacity-100 absolute bg-white text-black transition-opacity ease-in-out duration-500 hover:bg-green-400 hover:text-black '>Statements</li>
                 </Link>
               </Link>
               {/* </NavLink> */}

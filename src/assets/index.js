@@ -11,5 +11,6 @@ import catf from './catf.webp'
 import catm from './catm.jpg'
 import title from './title.png'
 import pattern from './pattern.jpg'
+import handala from './handala.jpg'
 
-export { pattern, logo, logo2, s1, s2, s3, arrow, instagram, spotify, FOPLogo, catf, catm, title }
+export { pattern, logo, logo2, s1, s2, s3, arrow, instagram, spotify, FOPLogo, catf, catm, title, handala }

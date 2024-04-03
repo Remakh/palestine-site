@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider, useRouteError  } from 'react-route
 import Statements from './routes/Statements.jsx'
 import Committee from './routes/Committee.jsx'
 import EventPage from './routes/EventPage.jsx'
+import Join from './routes/Join.jsx'
 import { loader as EventLoader } from './components/EventHeader.jsx'
 import {action as LoginAction} from './routes/Login.jsx'
 import {loader as EventsLoader} from './routes/Events.jsx'
@@ -17,6 +18,7 @@ import { loader as CommitteeLoader } from './routes/PersonPopup.jsx'
 import { action as CreateEventAction } from './routes/CreateEvent.jsx'
 import Login from './routes/Login.jsx'
 import CreateEvent from './routes/CreateEvent.jsx'
+import Emails from './routes/Emails.jsx'
 
 
 const Err = () => {
@@ -76,7 +78,18 @@ const router = createBrowserRouter([
       {
         path: '/Statements',
         element: <Statements />
-      }
+      },
+      {
+        path: '/Join',
+        element: <Join />
+      },
+      {
+        path: '/Emails',
+        element: <Emails />
+
+      }  
+        
+
     ]
   }
 ])
