@@ -12,5 +12,6 @@ import catm from './catm.jpg'
 import title from './title.png'
 import pattern from './pattern.jpg'
 import handala from './handala.jpg'
+import whiteLogo from './WHITE-TEXT-LOGO.png'
 
-export { pattern, logo, logo2, s1, s2, s3, arrow, instagram, spotify, FOPLogo, catf, catm, title, handala }
+export {whiteLogo, pattern, logo, logo2, s1, s2, s3, arrow, instagram, spotify, FOPLogo, catf, catm, title, handala }

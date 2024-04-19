@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink, redirect, useNavigate } from 'react-router-dom'
-import { FOPLogo, title } from '../assets'
+import { FOPLogo, title, whiteLogo } from '../assets'
 import { IoClose } from "react-icons/io5";
 import { IoIosMenu } from "react-icons/io";
 import { FaSortDown } from "react-icons/fa";
+
 const Navbar = () => {
   useEffect(() => {
     setOpen(false)
@@ -21,6 +22,8 @@ const Navbar = () => {
         <Link to='/'>
           <img src={FOPLogo} className=' w-[100px] my-auto p-3 rounded-full'/>
         </Link>
+          <img src={whiteLogo} className=' w-full h-1/4 my-auto'/>
+
         {/* <Link to='/' className='my-auto'>
           <img src={title} className=' w-[300px] my-auto p-3 rounded-full'/>    
           </Link>     */}

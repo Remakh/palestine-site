@@ -11,7 +11,7 @@ const SocialsBox = () => {
   return (
     <div className='flex justify-center w-full  py-5 '>
         <div className='flex flex-col text-center'>
-            <h2 className='text-green-800 font-semibold text-font '>#ManchesterFOP </h2>
+            <h2 className='text-black font-semibold text-font '>#ManchesterFOP </h2>
             <div className='flex md:flex-row flex-col my-10 shadow-lg bg-white items-center '>
                 <IconContext.Provider value={{ className: "socials-icon", size: 50}}>
                     <a href='https://instagram.com/manchesterfop?igshid=MzMyNGUyNmU2YQ==' target='_blank' className='w-full '>
